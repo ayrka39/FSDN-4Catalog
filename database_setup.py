@@ -2,6 +2,7 @@ from sqlalchemy import Column, ForeignKey, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine
+from sqlalchemy import backref
 
 Base = declarative_base()
 
@@ -37,7 +38,8 @@ class Item(Base):
     name = Column(String(255), nullable=False)
     description = Column(String(2048))
     category_id = Column(Integer, ForeignKey('category.id'))
-    category = relationship(Category)
+    category = relationship(
+        Category, backref=backref('item', cascade='all, delete'))
     user_id = Column(Integer, ForeignKey('user.id'))
     user = relationship(User)
 

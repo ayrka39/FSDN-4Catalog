@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 from flask import request, redirect, url_for
-from flask import jsonify, make_response, flash
+from flask import jsonify, make_response
 from flask import session as login_session
 from database_setup import Base, User, Category, Item
 from sqlalchemy import create_engine
@@ -350,15 +350,14 @@ def showCategoriesJSON():
 def showCategoryJSON(category_id):
     items = session.query(Item).filter_by(
         category_id=category_id).all()
-    return jsonify(
-        items=[
-            Item.serialize for item in items])
+    return jsonify(items=[item.serialize for item in items])
 
 
 @app.route('/category/<int:category_id>/items/<int:item_id>/JSON')
-def showItemJSON(catalog_id, item_id):
+def showItemJSON(category_id, item_id):
     item = session.query(Item).filter_by(id=item_id).first()
-    return jsonify(item=[item.serialize])
+    category = session.query(Category).filter_by(id=category_id).first()
+    return jsonify(item=[item.serialize], category=[category.serialize])
 
 
 if __name__ == '__main__':
