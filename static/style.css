@@ -1,0 +1,165 @@
+/* General */
+
+a:link {
+    text-decoration: none;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.flash__message {
+	display: block;
+	font-size: 1.1rem;
+	font-weight: 700;
+	letter-spacing: .1rem;
+	text-transform: uppercase;
+	color: #9b4dca;
+}
+
+/* Base Template */
+
+.wrapper .container {
+	max-width: 80rem;
+}
+
+.header {
+    background: #f4f5f6;
+    border: .1rem solid #d1d1d1;
+    display: block;
+    height: 5.2rem;
+    padding: 2rem;
+    max-width: 80rem;
+}
+
+.header .header__title {
+	color: blue;
+	display: inline;
+	line-height: 5.2rem;
+	position: relative;
+}
+
+.header__title .title__text {
+	display: inline;
+	font-size: 1.1rem;
+	font-weight: 700;
+	letter-spacing: .1rem;
+	text-transform: uppercase;
+	color: blue;
+}
+
+.header__user {
+	float: right;
+	list-style: none;
+	margin-bottom: 0;
+}
+
+.header__user .user__nav {
+	line-height: 5.2rem;
+	text-decoration: none;
+	font-size: 1.1rem;
+	font-weight: 700;
+	letter-spacing: .1rem;
+	text-transform: uppercase;
+	color: blue;
+}
+
+.content .container {
+	background: #f4f5f6;
+	margin-bottom: 2rem;
+	padding: 2rem;
+	border-bottom: .1rem solid #d1d1d1;
+}
+
+@media (min-width: 40.0rem) {
+	.content .container {
+		margin-top: 2rem;
+		border: .1rem solid #d1d1d1;
+	}
+}
+
+/* Categories Template */
+
+.list__header .header__title {
+	font-weight: 700;
+	margin-bottom: 1rem;
+	display: block;
+	text-transform: capitalize;
+}
+
+.list__header .header__bar {
+	border-bottom: .5rem solid blue;
+	height: .1rem;
+	display: block;
+	width: 7rem;
+}
+
+.items__item .item__name {
+	text-transform: capitalize;
+}
+
+.items__item .item__type {
+	color: #606c76;
+	font-style: italic;
+	text-transform: capitalize;
+}
+
+.latest__list .list__add {
+	font-size: .8rem;
+	height: 2.8rem;
+	line-height: 2.8rem;
+	padding: 0 1.5rem;
+}
+
+/* Template */
+
+
+.category-item__header .header__title {
+	font-weight: 700;
+	margin-bottom: 1rem;
+	display: block;
+	text-transform: capitalize;
+}
+
+.category-item__header .header__bar {
+	border-bottom: .5rem solid blue;
+	height: .1rem;
+	display: block;
+	width: 7rem;
+}
+
+.category-item__description {
+	margin-bottom: 1rem;
+}
+
+.category-item__controls .controls__edit,
+.category-item__controls .controls__delete {
+	display: inline;
+	font-size: 0.8rem;
+	font-weight: 700;
+	letter-spacing: .1rem;
+	text-transform: uppercase;
+	margin-right: .2rem;
+}
+
+
+.wrapper .container--login {
+	max-width: 36rem;
+}
+
+.content .container--login {
+	padding: 7.5rem 5rem;
+	margin: 5rem 20rem;
+	border: .1rem solid #d1d1d1;
+	text-align: center;
+}
+
+.login__separator {
+	font-weight: 700;
+	margin: 20px 0;
+}
+
+.login--google {
+	margin-top: 1rem;
+	
+}

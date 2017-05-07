@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+   <br><br>
+{% if not error %}
+	<div class="row">
+		<div class="category-item">
+			<h3 class="category-item__header">
+				<span class="header__title">Delete A Country</span>
+			</h3>
+            <div class="container">
+                <form action="{{ url_for('deleteItem', category_id = item.category_id, item_id = item.id) }}" method="POST">
+                    <h3 class="category-item__message">
+                        Are you sure you want to delete “{{item.name}}”?
+                    </h3>
+                    <input type="submit" value="Delete">
+                </form>
+			</div>
+				<a href="{{url_for('showItem', category_id = item.category_id ,item_id = item.id )}}" class="button">Back</a>
+				
+		</div>
+	</div>
+{% endif %}
+{% endblock %}

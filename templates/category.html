@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <br>
+	<div class="row">
+		<div class="categories">
+			<div class="categories__list">
+				<h2 class="list__header">
+					<span class="header__title">Continents</span>
+					<span class="header__bar"></span>
+				</h2>
+				<ul class="list__items">
+					{% for category in categories %}
+						<a href="{{url_for('showCategory', category_id = category.id )}}">
+							<li class="items__item">
+								<span class="item__name">{{category.name}}</span>
+							</li>
+						</a>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+    <br>
+		<div class="category-items">
+			<div class="category-items__list">
+				<h2 class="list__header">
+					<span class="header__title">{{categoryName}} ({{ItemsCount}} Countries)</span>
+				</h2>
+				<ul class="list__items">
+					{% for Item in Items %}
+						<a href="{{url_for('showItem', category_id = Item.category_id ,item_id = Item.id )}}">
+							<li class="items__item">
+							    <h2 class="list__header">
+								    <span class="item__name">{{Item.name}}</span>
+								</h2>
+							</li>
+						</a>
+					{% endfor %}
+				</ul>
+				
+			</div>
+			<br>
+			<br>
+            {% if session['user_id'] %}
+            <a class="button" href="{{ url_for('newItem') }}">Add A Country</a>
+            
+            {% endif %}            
+		</div>
+	</div>
+
+{% endblock %}

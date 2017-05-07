@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br>
+<h2>Add a new continent</h2>
+<br>
+<div class="container">
+    <form action="{{ url_for('newCategory')}}" method='post'>
+        <label>Name:</label>
+        <br>
+        <br>
+        <input type='text' size='34' name='name' required>
+        <br><br>
+        <input class="button" type='submit' value='Create'>
+    </form>
+</div>
+	<a class="button" href="{{url_for('showCategories')}}">Back</a>
+{% endblock %}
